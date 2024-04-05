@@ -35,4 +35,4 @@ RUN chmod 0755 /usr/local/bin/get-bridge-line /usr/local/bin/start-tor.sh
 
 USER debian-tor
 
-CMD [ "/usr/local/bin/start-tor.sh" ]
+ENTRYPOINT [ "/usr/local/bin/start-tor.sh" ]

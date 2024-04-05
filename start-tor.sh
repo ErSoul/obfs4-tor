@@ -47,4 +47,4 @@ $ADDITIONAL_VARIABLES
 EOF
 
 echo "Starting tor."
-tor -f /etc/tor/torrc
+exec tor -f /etc/tor/torrc

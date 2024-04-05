@@ -1,7 +1,7 @@
 # Base docker image
 FROM debian:stable-slim
 
-LABEL maintainer="Philipp Winter <phw@torproject.org>"
+LABEL maintainer="David Colmenares <ersoul@sdf.org>"
 
 # Install dependencies to add Tor's repository.
 RUN apt-get update && apt-get install -y \

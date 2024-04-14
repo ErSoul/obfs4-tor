@@ -27,21 +27,25 @@ RunAsDaemon 0
 # We don't need an open SOCKS port.
 SocksPort 0
 BridgeRelay 1
+ExitRelay 0
 Nickname ${NICK}
-Log notice file /var/log/tor/log
 Log notice stdout
 ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
 ExtORPort auto
 DataDirectory /var/lib/tor
 
 # The variable "OR_PORT" is replaced with the OR port.
-ORPort ${OR_PORT}
+ORPort ${OR_PORT} IPv4Only
 
 # The variable "PT_PORT" is replaced with the obfs4 port.
 ServerTransportListenAddr obfs4 0.0.0.0:${PT_PORT}
 
 # The variable "EMAIL" is replaced with the operator's email address.
 ContactInfo ${EMAIL}
+
+# For nyx
+ControlPort 9051
+CookieAuthentication 1
 
 $ADDITIONAL_VARIABLES
 EOF
